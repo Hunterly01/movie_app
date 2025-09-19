@@ -2,14 +2,14 @@ from datetime import datetime
 movie_file = {}
 def add_movie(movie_name):
     current_time = datetime.now()
-    formatted_date = current_time.strftime("%B %d, %Y")
+    formatted_date = current_time.strftime("%Y-%m-%d %H:%M:%S")
     if movie_name not in movie_file:
         movie_file[movie_name] = {
             "Time when movie was added": formatted_date,
             "rating": [],
             "average_rating": [],
         }
-        return f"movie {movie_name} added successfully"
+        return f"movie {movie_name} added successfully at {formatted_date}"
     else:
         return "movie already added"
 
